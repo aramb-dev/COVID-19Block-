@@ -7,17 +7,17 @@ function nukePage(){
 
 function removeYouTube(){
     strs = document.querySelectorAll("yt-formatted-string")
-    
+
     warning = document.querySelector("ytd-clarification-renderer")
     if(warning != null){
         warning.remove()
     }
-    
+
     for (var i = 0; i < strs.length; ++i){
         el = strs[i]
         str = el.innerText
-        if (str.match(/Coronavirus|Coronavirus\pandemic|Coronavirus symptoms|Coronavirus news|Coronavirus USA|Coronavirus China|Coronavirus Italy|Coronavirus recession|Coronavirus update|Coronavirus map|Coronavirus vaccine|Coronavirus pets|COVID-19|COVID-19 live updates|Pandemic|Face masks|Respirator masks|N95 face masks/gi)){
-            
+        if (str.match(/Coronavirus|Coronavirus|pandemic|Coronavirus symptoms|Coronavirus news|Coronavirus USA|Coronavirus China|Coronavirus Italy|Coronavirus recession|Coronavirus update|Coronavirus map|Coronavirus vaccine|Coronavirus pets|COVID-19|COVID-19 live updates|Pandemic|Face masks|Respirator masks|N95 face masks/gi)){
+
             vidResult = el.closest("ytd-video-renderer")
             if (vidResult != null){
                 vidResult.remove()
@@ -31,7 +31,7 @@ function removeYouTube(){
                 el.remove()
             }
         }
-        
+
     }
 }
 
@@ -42,29 +42,29 @@ function removeGoogle(){
 
         el = strs[i]
         str = el.textContent
-        if (str.match(/Coronavirus|Coronavirus\pandemic|Coronavirus symptoms|Coronavirus news|Coronavirus USA|Coronavirus China|Coronavirus Italy|Coronavirus recession|Coronavirus update|Coronavirus map|Coronavirus vaccine|Coronavirus pets|COVID-19|COVID-19 live updates|Pandemic|Face masks|Respirator masks|N95 face masks/gi)){
+        if (str.match(/Coronavirus|Coronavirus|pandemic|Coronavirus symptoms|Coronavirus news|Coronavirus USA|Coronavirus China|Coronavirus Italy|Coronavirus recession|Coronavirus update|Coronavirus map|Coronavirus vaccine|Coronavirus pets|COVID-19|COVID-19 live updates|Pandemic|Face masks|Respirator masks|N95 face masks/gi)){
             el.remove()
         }
-        
+
     }
-    
+
     strs = document.querySelectorAll(".mod")
 
     for (var i = 0; i < strs.length; ++i){
         el = strs[i]
-        if (str.match(/Coronavirus|Coronavirus\pandemic|Coronavirus symptoms|Coronavirus news|Coronavirus USA|Coronavirus China|Coronavirus Italy|Coronavirus recession|Coronavirus update|Coronavirus map|Coronavirus vaccine|Coronavirus pets|COVID-19|COVID-19 live updates|Pandemic|Face masks|Respirator masks|N95 face masks/gi)){
+        if (str.match(/Coronavirus|Coronavirus|pandemic|Coronavirus symptoms|Coronavirus news|Coronavirus USA|Coronavirus China|Coronavirus Italy|Coronavirus recession|Coronavirus update|Coronavirus map|Coronavirus vaccine|Coronavirus pets|COVID-19|COVID-19 live updates|Pandemic|Face masks|Respirator masks|N95 face masks/gi)){
             el.remove()
         }
         else{
             str = el.textContent
-            if (str.match(/Coronavirus|Coronavirus\pandemic|Coronavirus symptoms|Coronavirus news|Coronavirus USA|Coronavirus China|Coronavirus Italy|Coronavirus recession|Coronavirus update|Coronavirus map|Coronavirus vaccine|Coronavirus pets|COVID-19|COVID-19 live updates|Pandemic|Face masks|Respirator masks|N95 face masks/gi)){
+            if (str.match(/Coronavirus|Coronavirus|pandemic|Coronavirus symptoms|Coronavirus news|Coronavirus USA|Coronavirus China|Coronavirus Italy|Coronavirus recession|Coronavirus update|Coronavirus map|Coronavirus vaccine|Coronavirus pets|COVID-19|COVID-19 live updates|Pandemic|Face masks|Respirator masks|N95 face masks/gi)){
                 el.remove()
             }
         }
-        
+
     }
-    
-    if (url.match(/Coronavirus|Coronavirus\pandemic|Coronavirus symptoms|Coronavirus news|Coronavirus USA|Coronavirus China|Coronavirus Italy|Coronavirus recession|Coronavirus update|Coronavirus map|Coronavirus vaccine|Coronavirus pets|COVID-19|COVID-19 live updates|Pandemic|Face masks|Respirator masks|N95 face masks/gi)){
+
+    if (url.match(/Coronavirus|Coronavirus|pandemic|Coronavirus symptoms|Coronavirus news|Coronavirus USA|Coronavirus China|Coronavirus Italy|Coronavirus recession|Coronavirus update|Coronavirus map|Coronavirus vaccine|Coronavirus pets|COVID-19|COVID-19 live updates|Pandemic|Face masks|Respirator masks|N95 face masks/gi)){
         kp_wp_tab = document.querySelectorAll(".kp-wholepage")
         for (var i = 0; i < kp_wp_tab.length; ++i){
             el = kp_wp_tab[i]
@@ -77,7 +77,7 @@ function removeGoogle(){
             el.remove()
         }
     }
-    
+
 }
 
 function instaRemove(){
@@ -86,7 +86,7 @@ function instaRemove(){
     for (var i = 0; i < strs.length; ++i){
         el = strs[i]
         str = el.textContent
-        if (str.match(/Coronavirus|Coronavirus\pandemic|Coronavirus symptoms|Coronavirus news|Coronavirus USA|Coronavirus China|Coronavirus Italy|Coronavirus recession|Coronavirus update|Coronavirus map|Coronavirus vaccine|Coronavirus pets|COVID-19|COVID-19 live updates|Pandemic|Face masks|Respirator masks|N95 face masks/gi)){
+        if (str.match(/Coronavirus|Coronavirus|pandemic|Coronavirus symptoms|Coronavirus news|Coronavirus USA|Coronavirus China|Coronavirus Italy|Coronavirus recession|Coronavirus update|Coronavirus map|Coronavirus vaccine|Coronavirus pets|COVID-19|COVID-19 live updates|Pandemic|Face masks|Respirator masks|N95 face masks/gi)){
             el.remove()
         }
     }
@@ -95,7 +95,7 @@ function instaRemove(){
 if(url.includes("youtube.com")){
     window.setInterval(removeYouTube, 1000);
 }
-else if(url.includes("worldometers.info/coronavirus") || 
+else if(url.includes("worldometers.info/coronavirus") ||
     url.includes("who.int/health-topics/coronavirus")){
     nukePage()
 }
